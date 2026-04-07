@@ -95,7 +95,7 @@ export default function Navbar() {
           boxShadow: '0 0 10px rgba(245, 158, 11, 0.1)',
           cursor: 'pointer'
         }}>
-           1,250 PTS
+           {user?.points ? user.points.toLocaleString() : 1250} PTS
         </div>
 
         <button 

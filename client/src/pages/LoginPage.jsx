@@ -9,10 +9,25 @@ export default function LoginPage() {
   const [username, setUsername] = useState('john.doe@example.com');
   const [password, setPassword] = useState('password123');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(username.split('@')[0]);
-    navigate('/');
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username })
+      });
+      if (response.ok) {
+        const data = await response.json();
+        login(data.user);
+        navigate('/');
+      } else {
+        alert('Authentication failed');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Network error connecting to backend');
+    }
   };
 
   return (

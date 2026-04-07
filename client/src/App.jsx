@@ -34,9 +34,9 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  const login = (username) => {
+  const login = (userData) => {
     setIsAuthenticated(true);
-    setUser({ name: username || 'John Doe' });
+    setUser(userData);
   };
 
   const logout = () => {

@@ -15,17 +15,20 @@ export default function Dashboard() {
 
   // Simulate real-time updates
   useEffect(() => {
-    const interval = setInterval(() => {
-      const gates = ['North Gate', 'South Gate', 'East Gate', 'West Gate'];
-      const statuses = ['green', 'yellow', 'red'];
-      const randomGate = gates[Math.floor(Math.random() * gates.length)];
-      const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-      
-      setDensities(prev => ({
-        ...prev,
-        [randomGate]: randomStatus
-      }));
-    }, 5000);
+    const fetchDensity = async () => {
+      try {
+        const res = await fetch('/api/stadium/density');
+        if (res.ok) {
+          const data = await res.json();
+          setDensities(data);
+        }
+      } catch(err) {
+        console.error(err);
+      }
+    };
+    
+    fetchDensity(); // Initial fetch
+    const interval = setInterval(fetchDensity, 5000);
     return () => clearInterval(interval);
   }, []);
 

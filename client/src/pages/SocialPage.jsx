@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Users, Navigation } from 'lucide-react';
 
 export default function SocialPage() {
-  const friends = [
-    { name: 'Sarah Jenkins', location: 'Section 104, Row G', isHere: true, avatar: 'SJ' },
-    { name: 'Mike Torres', location: 'North Gate Concessions', isHere: true, avatar: 'MT' },
-    { name: 'Alex Rivera', location: 'Arriving in 10 mins', isHere: false, avatar: 'AR' }
-  ];
+  const [friends, setFriends] = useState([]);
+  
+  useEffect(() => {
+    const fetchFriends = async () => {
+      try {
+        const res = await fetch('/api/social/friends');
+        if (res.ok) {
+          const data = await res.json();
+          setFriends(data);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchFriends();
+  }, []);
 
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px', margin: '0 auto' }}>
