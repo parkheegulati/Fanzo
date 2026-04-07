@@ -1,0 +1,25 @@
+{
+  "name": "venuesync-app",
+  "version": "1.0.0",
+  "description": "Fanzo is a high-fidelity, interactive web prototype designed to revolutionize the physical event experience for attendees at large-scale sporting venues. Built with React and Vite, the platform focuses on solving common stadium pain points like crowd movement, waiting times, and real-time coordination through an immersive, \"glassmorphic\" user interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkheegulati/Fanzo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/parkheegulati/Fanzo/issues"
+  },
+  "homepage": "https://github.com/parkheegulati/Fanzo#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
