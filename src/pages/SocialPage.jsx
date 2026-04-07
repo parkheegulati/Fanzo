@@ -43,7 +43,7 @@ export default function SocialPage() {
           </div>
         ))}
 
-        <button className="glass-panel" style={{ padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', cursor: 'pointer', borderStyle: 'dashed', color: 'var(--text-accent)' }}>
+        <button className="glass-panel" onClick={() => alert('Generating group session invite link to share via iMessage/WhatsApp...')} style={{ padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', cursor: 'pointer', borderStyle: 'dashed', color: 'var(--text-accent)' }}>
           <Users size={20} /> Invite Friends to Group Session
         </button>
       </div>

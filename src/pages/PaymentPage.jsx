@@ -37,7 +37,7 @@ export default function PaymentPage() {
           <button className="btn btn-glass">Edit</button>
         </div>
 
-        <button className="glass-panel" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', cursor: 'pointer', borderStyle: 'dashed' }}>
+        <button className="glass-panel" onClick={() => alert('Opening secure Stripe card entry modal...')} style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', cursor: 'pointer', borderStyle: 'dashed' }}>
           <Plus size={20} /> Add New Payment Method
         </button>
 

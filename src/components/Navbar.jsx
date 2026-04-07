@@ -33,16 +33,18 @@ export default function Navbar() {
       alignItems: 'center'
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        <h1 style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 700, 
-          background: 'linear-gradient(135deg, var(--text-accent), var(--primary))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          margin: 0
-        }}>
-          Fanzo
-        </h1>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ 
+            fontSize: '1.5rem', 
+            fontWeight: 700, 
+            background: 'linear-gradient(135deg, var(--text-accent), var(--primary))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            margin: 0
+          }}>
+            Fanzo
+          </h1>
+        </Link>
         
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           {navItems.map(item => (
@@ -77,7 +79,9 @@ export default function Navbar() {
       <div style={{ display: 'flex', gap: '0.8rem', position: 'relative', alignItems: 'center' }}>
         
         {/* Gamification Badge */}
-        <div style={{ 
+        <div 
+          onClick={() => alert('Opening Gamification Hub to redeem Fanzo Points!')}
+          style={{ 
           background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05))',
           border: '1px solid rgba(245, 158, 11, 0.3)',
           color: 'var(--warning)',

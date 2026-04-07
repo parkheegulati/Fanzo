@@ -40,7 +40,7 @@ export default function TransitPage() {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>Get Driving Directions</button>
+            <button className="btn btn-primary" onClick={() => alert('Handoff to Google Maps/Apple Maps with optimal gate routing...')} style={{ width: '100%', marginTop: '1rem' }}>Get Driving Directions</button>
           </div>
 
           {/* Ride Share */}
