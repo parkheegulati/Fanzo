@@ -104,6 +104,15 @@ app.get('/api/social/friends', (req, res) => {
     ]);
 });
 
+// === Production Deployment Configuration ===
+// Serve static React frontend files
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Catch-all route to serve React's index.html for unknown routes (Client-side routing)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
+
 // Run
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
